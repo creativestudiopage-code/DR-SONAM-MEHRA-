@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#0e1720"/>
+<title>Dr. Sonam Mehra — Dermatologist & Skin, Hair & Laser Clinic, Ajmer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://images.unsplash.com"/>
+
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80" fetchpriority="high"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "surface": "#0e1720",
+                "surface-dim": "#0e1720",
+                "surface-bright": "#3a4a5c",
+                "surface-container-lowest": "#08101a",
+                "surface-container-low": "#131d29",
+                "surface-container": "#17222f",
+                "surface-container-high": "#202c3a",
+                "surface-container-highest": "#2a3746",
+                "on-surface": "#e6eef5",
+                "on-surface-variant": "#a9c0cc",
+                "outline": "#7d93a3",
+                "outline-variant": "#33475a",
+                "primary": "#3fd4c0",
+                "on-primary": "#04302b",
+                "primary-container": "#2db8a6",
+                "on-primary-container": "#063f38",
+                "secondary": "#8fc3f0",
+                "on-secondary": "#0b2a45",
+                "secondary-container": "#1e4568",
+                "on-secondary-container": "#b5d5f2",
+                "tertiary": "#7fc8e8",
+                "background": "#0e1720",
+                "on-background": "#e6eef5",
+                "surface-variant": "#2a3746"
+            },
+            borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+            fontFamily: {
+                "headline-md": ["Playfair Display"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Playfair Display"],
+                "label-md": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-sm": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"]
+            },
+            fontSize: {
+                "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600" }],
+                "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "700" }]
+            }
+        }
+    }
+}
+</script>
+<style>
+    body { background-color: #0e1720; color: #e6eef5; font-family: 'Inter', sans-serif; }
+    .glass-panel {
+        background: rgba(24, 82, 96, 0.45);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom-color: rgba(63, 212, 192, 0.15);
+        border-right-color: rgba(63, 212, 192, 0.15);
+    }
+    .glass-nav {
+        background: rgba(8, 16, 26, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .spotlight-bg {
+        background: radial-gradient(circle at 50% 0%, rgba(28, 96, 120, 0.35) 0%, rgba(8, 16, 26, 1) 60%);
+    }
+    .text-gradient {
+        background: linear-gradient(135deg, #3fd4c0 0%, #9df2e6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    input:focus, textarea:focus { outline: none; }
+    ::placeholder { color: rgba(169, 192, 204, 0.4); }
+
+    .hero-container { position: relative; width: 100%; min-height: 100vh; min-height: 100dvh; overflow: hidden; }
+    .hero-bg {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        object-fit: cover; transform: scale(1.05); transition: transform 0.1s linear;
+    }
+    .hero-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to bottom, rgba(8,16,26,0.4) 0%, rgba(8,16,26,0.55) 45%, rgba(8,16,26,0.9) 85%, rgba(8,16,26,1) 100%);
+        z-index: 2;
+    }
+    .hero-content { position: relative; z-index: 10; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; padding-top: 80px; padding-bottom: 80px; }
+
+    .scroll-reveal {
+        opacity: 0; transform: translateY(30px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+    .scroll-reveal-delay-1 { transition-delay: 0.1s; }
+    .scroll-reveal-delay-2 { transition-delay: 0.2s; }
+    .scroll-reveal-delay-3 { transition-delay: 0.3s; }
+    .scroll-reveal-delay-4 { transition-delay: 0.4s; }
+    .scroll-reveal-delay-5 { transition-delay: 0.5s; }
+
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    @keyframes scrollBounce { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(8px); opacity: 0.5; } }
+    .scroll-indicator { animation: scrollBounce 2s ease-in-out infinite; }
+    .nav-scrolled { background: rgba(8, 16, 26, 0.92) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+
+    /* Before/After comparison slider */
+    .ba-wrap { position: relative; width: 100%; height: 340px; overflow: hidden; user-select: none; }
+    .ba-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .ba-after-img { clip-path: inset(0 0 0 50%); }
+    .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #3fd4c0; z-index: 10; }
+    .ba-handle::after {
+        content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        width: 40px; height: 40px; border-radius: 9999px; background: #3fd4c0;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    }
+    .ba-handle::before {
+        content: "◀ ▶"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        z-index: 11; font-size: 11px; color: #04302b; font-weight: 700; white-space: nowrap;
+    }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 20; margin: 0; }
+    .ba-tag { position: absolute; top: 12px; padding: 4px 12px; border-radius: 9999px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; z-index: 5; }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s ease; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .scroll-reveal { opacity: 1; transform: none; transition: none; }
+        .float-animation { animation: none; }
+        .scroll-indicator { animation: none; }
+    }
+
+    html { scroll-padding-top: 80px; }
+    @media (max-width: 767px) {
+        input, select, textarea { font-size: 16px !important; }
+        body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+        footer { padding-bottom: 24px; }
+    }
+    select { -webkit-appearance: none; appearance: none; }
+    * { -webkit-tap-highlight-color: transparent; }
+    @media (hover: none) and (pointer: coarse) {
+        a, button { min-height: 44px; }
+        #mobile-menu a { min-height: 44px; display: flex; align-items: center; }
+        .hero-bg { transform: none !important; }
+    }
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+        @media (max-width: 767px) {
+            .mobile-bottom-cta { padding-bottom: env(safe-area-inset-bottom); }
+        }
+    }
+</style>
+<base target="_blank">
+<base target="_blank">
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden min-h-screen relative spotlight-bg">
+
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-[1440px] mx-auto flex justify-between items-center px-6 lg:px-8 py-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">dermatology</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface tracking-widest text-sm">Dr. Sonam Mehra</div>
+                <div class="text-[11px] text-on-surface-variant tracking-wider uppercase font-medium">MD, DNB Dermatologist</div>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
+            <a class="text-primary border-b-2 border-primary pb-1 text-label-md font-label-md uppercase hover:opacity-80 transition-all" href="#home">Home</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 text-label-md font-label-md uppercase" href="#about">About Doctor</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 text-label-md font-label-md uppercase" href="#treatments">Treatments</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 text-label-md font-label-md uppercase" href="#results">Before & After</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 text-label-md font-label-md uppercase" href="#reviews">Reviews</a>
+        </div>
+        <a href="#contact" class="hidden md:flex bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md uppercase hover:brightness-110 transition-all items-center gap-2">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            Book Appointment
+        </a>
+        <button class="md:hidden text-on-surface" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-on-surface/10">
+        <div class="px-6 py-4 flex flex-col gap-4">
+            <a class="text-primary text-label-md font-label-md uppercase" href="#home">Home</a>
+            <a class="text-on-surface text-label-md font-label-md uppercase" href="#about">About Doctor</a>
+            <a class="text-on-surface text-label-md font-label-md uppercase" href="#treatments">Treatments</a>
+            <a class="text-on-surface text-label-md font-label-md uppercase" href="#results">Before & After</a>
+            <a class="text-on-surface text-label-md font-label-md uppercase" href="#reviews">Reviews</a>
+            <a class="text-on-surface text-label-md font-label-md uppercase" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-container">
+    <img
+        class="hero-bg"
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80"
+        alt="Skin Care Clinic Ajmer"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div class="scroll-reveal inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full w-fit">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-label-md font-label-md text-primary uppercase tracking-widest">Board-Certified Dermatologist</span>
+                </div>
+                <h1 class="scroll-reveal scroll-reveal-delay-1 text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface leading-tight drop-shadow-lg">
+                    Complete Skin, Hair &<br/><span class="text-gradient">Laser Solutions</span><br/>in Ajmer
+                </h1>
+                <p class="scroll-reveal scroll-reveal-delay-2 text-body-lg font-body-lg text-on-surface max-w-xl leading-relaxed drop-shadow-md" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                    Trusted MD, DNB Dermatologist from <span class="text-primary font-semibold">Lady Hardinge Medical College, New Delhi</span> — personalized, result-driven aesthetic and medical treatments.
+                </p>
+                <div class="scroll-reveal scroll-reveal-delay-3 flex flex-wrap gap-4 mt-4">
+                    <a href="tel:+916375899878" class="bg-primary text-on-primary px-8 py-3.5 rounded-full font-label-md text-label-md uppercase hover:brightness-110 transition-all shadow-lg shadow-primary/20 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">call</span>
+                        Call Now: 6375899878
+                    </a>
+                    <a href="#contact" class="glass-panel text-on-surface px-8 py-3.5 rounded-full font-label-md text-label-md uppercase hover:border-primary/50 transition-all">
+                        Book Consultation
+                    </a>
+                </div>
+                <div class="scroll-reveal scroll-reveal-delay-4 flex items-center gap-6 mt-6 pt-6 border-t border-white/20">
+                    <div class="flex gap-1">
+                        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <div class="text-sm text-on-surface">
+                        <span class="text-primary font-semibold">4.9★</span> Rated on Google & Justdial · 800+ Reviews
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 hidden lg:flex justify-end">
+                <div class="scroll-reveal scroll-reveal-delay-5 float-animation">
+                    <div class="glass-panel rounded-3xl p-6 max-w-[280px] border border-primary/20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">school</span>
+                            </div>
+                            <div>
+                                <div class="text-headline-sm font-headline-sm text-on-surface">Dr. Sonam Mehra</div>
+                                <div class="text-body-md text-on-surface-variant">MBBS, MD, DNB</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <div>
+                                <div class="text-headline-md font-headline-md text-primary">4.9</div>
+                                <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Google Rating</div>
+                            </div>
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-body-md text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Shastri Nagar, Ajmer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator">
+            <span class="text-label-md text-on-surface-variant uppercase tracking-widest text-xs">Scroll to explore</span>
+            <span class="material-symbols-outlined text-primary">keyboard_arrow_down</span>
+        </div>
+    </div>
+</section>
+
+<!-- Features Row -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="scroll-reveal glass-panel p-6 rounded-2xl flex items-center gap-5 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">badge</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface">Board-Certified Expert</div>
+                <div class="text-body-md text-on-surface-variant mt-1">MD, DNB Dermatologist</div>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 glass-panel p-6 rounded-2xl flex items-center gap-5 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">syringe</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface">US-FDA Approved Laser</div>
+                <div class="text-body-md text-on-surface-variant mt-1">Safe & precise technology</div>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel p-6 rounded-2xl flex items-center gap-5 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface">Hygiene & Safety First</div>
+                <div class="text-body-md text-on-surface-variant mt-1">Modern clinical environment</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Doctor -->
+<section id="about" class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="relative scroll-reveal">
+            <div class="rounded-3xl overflow-hidden border border-outline-variant/20 bg-white flex items-center justify-center p-4">
+                <img class="w-full h-[430px] object-contain object-bottom" loading="eager" fetchpriority="high" decoding="async" src="dr sonam mehra.png" alt="Dr. Sonam Mehra — Dermatologist Ajmer"/>
+            </div>
+            <div class="absolute -bottom-6 -right-6 glass-panel rounded-2xl p-6 hidden lg:block max-w-[240px]">
+                <div class="text-label-md text-primary uppercase tracking-widest mb-2">Education</div>
+                <div class="text-headline-sm font-headline-sm text-on-surface leading-snug">Lady Hardinge Medical College, New Delhi</div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-6">
+            <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest">About Doctor</div>
+            <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Meet Your<br/><span class="text-gradient">Dermatologist</span></h2>
+            <p class="scroll-reveal scroll-reveal-delay-2 text-body-lg text-on-surface-variant leading-relaxed">
+                Dr. Sonam Mehra is a highly skilled Dermatologist and Cosmetologist with advanced medical training from the prestigious Lady Hardinge Medical College, New Delhi. She specializes in root-cause diagnosis, ensuring long-lasting and safe treatments for complex skin, hair, and nail conditions.
+            </p>
+            <div class="scroll-reveal scroll-reveal-delay-3 flex flex-col gap-3 mt-2">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <div>
+                        <div class="text-on-surface font-semibold">Medical Dermatology</div>
+                        <div class="text-body-md text-on-surface-variant">Acne, Vitiligo, Psoriasis, Eczema</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <div>
+                        <div class="text-on-surface font-semibold">Aesthetic Procedures</div>
+                        <div class="text-body-md text-on-surface-variant">CO2 Laser, PRP, HydraFacial, Anti-Aging</div>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                    <div>
+                        <div class="text-on-surface font-semibold">Pediatric & Trichology</div>
+                        <div class="text-body-md text-on-surface-variant">Child skin care & hair loss solutions</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-reveal scroll-reveal-delay-4 flex gap-4 mt-4">
+                <a href="https://instagram.com/drsonammehra" target="_blank" rel="noopener" class="glass-panel w-12 h-12 rounded-full flex items-center justify-center hover:border-primary/50 transition-all">
+                    <svg class="w-5 h-5 text-on-surface" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="glass-panel w-12 h-12 rounded-full flex items-center justify-center hover:border-primary/50 transition-all">
+                    <svg class="w-5 h-5 text-on-surface" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Treatments -->
+<section id="treatments" class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="text-center mb-12">
+        <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest mb-4">Our Services</div>
+        <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Comprehensive Treatments</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="scroll-reveal glass-panel rounded-3xl p-7 flex flex-col gap-4 hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">face</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface mb-3">Skin Care</div>
+                <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Acne & Acne Scars</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Pigmentation & Melasma</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Vitiligo</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Psoriasis</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Chemical Peels</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="scroll-reveal scroll-reveal-delay-1 glass-panel rounded-3xl p-7 flex flex-col gap-4 hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">sports_bar</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface mb-3">Hair Care</div>
+                <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Hair Fall Control</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>PRP Therapy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Hair Regrowth</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Anti-Dandruff</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel rounded-3xl p-7 flex flex-col gap-4 hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">laser_weapon</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface mb-3">Laser Treatments</div>
+                <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Fractional CO2 Laser</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Laser Hair Reduction</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Tattoo Removal</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Skin Resurfacing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="scroll-reveal scroll-reveal-delay-3 glass-panel rounded-3xl p-7 flex flex-col gap-4 hover:-translate-y-2 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface mb-3">Aesthetic Care</div>
+                <ul class="flex flex-col gap-2 text-body-md text-on-surface-variant">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>HydraFacial</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Anti-Aging & Wrinkles</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Dermaroller / MNRF</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Skin Rejuvenation</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Before & After Results -->
+<section id="results" class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24 relative z-10">
+    <div class="text-center mb-12">
+        <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest mb-4">Real Results</div>
+        <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Before & After Treatment</h2>
+        <p class="scroll-reveal scroll-reveal-delay-2 text-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto">Real patient transformations from our clinic — swipe or tap to view each case.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="scroll-reveal glass-panel rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden">
+                <img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="Acne Scars Treatment.png" alt="Acne scars before and after"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Acne Scars & CO2 Resurfacing</h3>
+                <div class="text-label-md text-primary uppercase tracking-wider mb-3">4 Sessions · 3 Months</div>
+                <p class="text-body-md text-on-surface-variant flex-grow">Significant reduction in deep pitted acne scars with improved skin texture and collagen rebuilding.</p>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 glass-panel rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden">
+                <img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="Pigmentation &amp; Dark Spots.png" alt="Pigmentation before and after"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Pigmentation & Dark Spots</h3>
+                <div class="text-label-md text-primary uppercase tracking-wider mb-3">5 Sessions</div>
+                <p class="text-body-md text-on-surface-variant flex-grow">Targeted reduction of dark patches and uneven tone for clear, radiant skin.</p>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden">
+                <img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="Hair PRP Regrowth.png" alt="Hair PRP before and after"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Hair PRP Regrowth</h3>
+                <div class="text-label-md text-primary uppercase tracking-wider mb-3">PRP Therapy</div>
+                <p class="text-body-md text-on-surface-variant flex-grow">Visible hair density improvement with thick, healthy regrowth.</p>
+            </div>
+        </div>
+        <div class="scroll-reveal glass-panel rounded-3xl overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+            <div class="relative overflow-hidden">
+                <img class="w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="Anti-Aging  Medifacials.png" alt="Anti-aging before and after"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Anti-Aging & Medifacials</h3>
+                <div class="text-label-md text-primary uppercase tracking-wider mb-3">Medifacial Treatment</div>
+                <p class="text-body-md text-on-surface-variant flex-grow">Youthful glow restored — deep hydration and skin rejuvenation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="text-center mb-12">
+        <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest mb-4">Why Choose Us</div>
+        <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">The Clinic Difference</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="scroll-reveal glass-panel p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 mx-auto rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+            </div>
+            <div class="text-headline-sm font-headline-sm text-on-surface mb-2">Board-Certified</div>
+            <div class="text-body-md text-on-surface-variant">MD, DNB Dermatologist with top-tier training</div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 glass-panel p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 mx-auto rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+            </div>
+            <div class="text-headline-sm font-headline-sm text-on-surface mb-2">FDA-Approved Tech</div>
+            <div class="text-body-md text-on-surface-variant">Safe, reliable and precise laser equipment</div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 mx-auto rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+            </div>
+            <div class="text-headline-sm font-headline-sm text-on-surface mb-2">Root-Cause Care</div>
+            <div class="text-body-md text-on-surface-variant">Detailed consultations focused on the real cause</div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-3 glass-panel p-6 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-14 h-14 mx-auto rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">sanitizer</span>
+            </div>
+            <div class="text-headline-sm font-headline-sm text-on-surface mb-2">Hygiene First</div>
+            <div class="text-body-md text-on-surface-variant">Clean, modern and friendly clinical environment</div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="reviews" class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="text-center mb-12">
+        <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest mb-4">Patient Love</div>
+        <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Testimonials & Reviews</h2>
+        <div class="scroll-reveal scroll-reveal-delay-2 mt-4 flex items-center justify-center gap-2">
+            <span class="flex gap-1">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="text-body-lg text-on-surface font-semibold">4.9 / 5</span>
+            <span class="text-body-md text-on-surface-variant">(800+ Google Reviews)</span>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="scroll-reveal glass-panel p-8 rounded-3xl flex flex-col gap-5">
+            <div class="flex gap-1">
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-body-lg text-on-surface leading-relaxed flex-grow">"Dr. Sonam Mehra listens very carefully and explains the exact root cause of the skin problem. Highly recommended in Ajmer!"</p>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">PK</div>
+                <div>
+                    <div class="text-on-surface font-semibold text-sm">Priya Kumawat</div>
+                    <div class="text-body-md text-on-surface-variant text-xs">Google Review</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 glass-panel p-8 rounded-3xl flex flex-col gap-5">
+            <div class="flex gap-1">
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-body-lg text-on-surface leading-relaxed flex-grow">"Excellent service for laser treatments and hair fall. Staff is very professional and empathetic."</p>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary font-bold text-sm">RS</div>
+                <div>
+                    <div class="text-on-surface font-semibold text-sm">Rohit Singh</div>
+                    <div class="text-body-md text-on-surface-variant text-xs">Justdial Review</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel p-8 rounded-3xl flex flex-col gap-5">
+            <div class="flex gap-1">
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-body-lg text-on-surface leading-relaxed flex-grow">"My melasma reduced visibly after the peel sessions. Best dermatologist in Ajmer — worth every visit."</p>
+            <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary font-bold text-sm">A</div>
+                <div>
+                    <div class="text-on-surface font-semibold text-sm">Aarti Sharma</div>
+                    <div class="text-body-md text-on-surface-variant text-xs">Google Review</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="bg-surface-container-highest py-16 md:py-20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-outline-variant">
+        <div class="scroll-reveal py-4 md:py-0">
+            <p class="text-headline-lg font-headline-lg text-primary mb-2">800+</p>
+            <p class="text-label-md font-label-md text-on-surface uppercase tracking-widest">5-Star Reviews</p>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 py-4 md:py-0">
+            <p class="text-headline-lg font-headline-lg text-primary mb-2">10,000+</p>
+            <p class="text-label-md font-label-md text-on-surface uppercase tracking-widest">Patients Treated</p>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 py-4 md:py-0">
+            <p class="text-headline-lg font-headline-lg text-primary mb-2">4.9★</p>
+            <p class="text-label-md font-label-md text-on-surface uppercase tracking-widest">Google Rating</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-[900px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="text-center mb-12">
+        <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest mb-4">FAQ</div>
+        <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Common Questions</h2>
+    </div>
+    <div class="flex flex-col gap-4">
+        <div class="scroll-reveal faq-item glass-panel rounded-2xl">
+            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                <span class="text-headline-sm font-headline-sm text-on-surface">How do I schedule an appointment?</span>
+                <span class="material-symbols-outlined text-primary faq-chevron">expand_more</span>
+            </button>
+            <div class="faq-answer px-6">
+                <p class="pb-6 text-body-md text-on-surface-variant">You can call or WhatsApp us directly at <a href="tel:+916375899878" class="text-primary font-semibold">+91 63758 99878</a> to book your consultation slot.</p>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-1 faq-item glass-panel rounded-2xl">
+            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                <span class="text-headline-sm font-headline-sm text-on-surface">Are laser treatments safe for sensitive skin?</span>
+                <span class="material-symbols-outlined text-primary faq-chevron">expand_more</span>
+            </button>
+            <div class="faq-answer px-6">
+                <p class="pb-6 text-body-md text-on-surface-variant">Yes, all laser procedures are customized according to your skin type under strict medical supervision by Dr. Sonam Mehra.</p>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 faq-item glass-panel rounded-2xl">
+            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+                <span class="text-headline-sm font-headline-sm text-on-surface">What are the clinic timings?</span>
+                <span class="material-symbols-outlined text-primary faq-chevron">expand_more</span>
+            </button>
+            <div class="faq-answer px-6">
+                <p class="pb-6 text-body-md text-on-surface-variant">Monday–Saturday: 9:00 AM – 1:00 PM | 5:00 PM – 7:00 PM<br/>Sunday: 9:00 AM – 1:00 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Booking -->
+<section id="contact" class="max-w-[1440px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="flex flex-col gap-6">
+            <div class="scroll-reveal text-label-md font-label-md text-primary uppercase tracking-widest">Visit Us</div>
+            <h2 class="scroll-reveal scroll-reveal-delay-1 text-headline-lg font-headline-lg text-on-surface">Book Your<br/><span class="text-gradient">Consultation</span></h2>
+            <p class="scroll-reveal scroll-reveal-delay-2 text-body-lg text-on-surface-variant leading-relaxed">
+                Call or WhatsApp us directly for quick appointment confirmation. Walk-ins are welcome during clinic hours.
+            </p>
+            <div class="flex flex-col gap-4 mt-4">
+                <a href="tel:+916375899878" class="scroll-reveal scroll-reveal-delay-3 glass-panel p-5 rounded-2xl flex items-center gap-4 hover:border-primary/50 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">call</span>
+                    </div>
+                    <div>
+                        <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Phone / WhatsApp</div>
+                        <div class="text-headline-sm font-headline-sm text-on-surface">+91 63758 99878</div>
+                    </div>
+                </a>
+                <div class="scroll-reveal scroll-reveal-delay-3 glass-panel p-5 rounded-2xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    </div>
+                    <div>
+                        <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Clinic Address</div>
+                        <div class="text-on-surface font-semibold text-sm leading-snug mt-1">124, Near Bharat Hospital, Shastri Nagar,<br/>Ajmer, Rajasthan 305001</div>
+                    </div>
+                </div>
+                <div class="scroll-reveal scroll-reveal-delay-4 glass-panel p-5 rounded-2xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                        <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    </div>
+                    <div>
+                        <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Clinic Timings</div>
+                        <div class="text-on-surface font-semibold text-sm leading-snug mt-1">Mon–Sat: 9 AM – 1 PM | 5 PM – 7 PM<br/>Sunday: 9 AM – 1 PM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-reveal scroll-reveal-delay-5 mt-4 rounded-3xl overflow-hidden border border-outline-variant/20 h-64">
+                <iframe
+                    src="https://www.google.com/maps?q=Shastri%20Nagar%2C%20Ajmer%2C%20Rajasthan%20305001&output=embed"
+                    class="w-full h-full border-0" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Clinic Location Map"></iframe>
+            </div>
+        </div>
+        <div class="scroll-reveal scroll-reveal-delay-2 glass-panel rounded-3xl p-8 md:p-10 h-fit">
+            <h3 class="text-headline-sm font-headline-sm text-on-surface mb-6">Request an Appointment</h3>
+            <form class="flex flex-col gap-5" onsubmit="event.preventDefault(); alert('Thank you! Our team will call you shortly to confirm your appointment.');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-label-md font-label-md text-on-surface uppercase mb-2">Name</label>
+                        <input type="text" placeholder="Your name" class="w-full bg-surface-container-high border-b-2 border-primary border-t-0 border-l-0 border-r-0 text-on-surface px-3 py-3 focus:ring-0 focus:border-primary" required/>
+                    </div>
+                    <div>
+                        <label class="block text-label-md font-label-md text-on-surface uppercase mb-2">Phone</label>
+                        <input type="tel" placeholder="+91..." class="w-full bg-surface-container-high border-b-2 border-primary border-t-0 border-l-0 border-r-0 text-on-surface px-3 py-3 focus:ring-0 focus:border-primary" required/>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-label-md font-label-md text-on-surface uppercase mb-2">Treatment Needed</label>
+                    <select class="w-full bg-surface-container-high border-b-2 border-primary border-t-0 border-l-0 border-r-0 text-on-surface px-3 py-3 focus:ring-0 focus:border-primary">
+                        <option>Skin Consultation</option>
+                        <option>Acne / Acne Scars</option>
+                        <option>Pigmentation / Melasma</option>
+                        <option>Hair Fall / PRP Therapy</option>
+                        <option>Laser Hair Reduction</option>
+                        <option>CO2 Laser Resurfacing</option>
+                        <option>HydraFacial</option>
+                        <option>Anti-Aging</option>
+                        <option>Vitiligo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-label-md font-label-md text-on-surface uppercase mb-2">Preferred Date & Time</label>
+                    <input type="text" placeholder="e.g. Saturday, 5:30 PM" class="w-full bg-surface-container-high border-b-2 border-primary border-t-0 border-l-0 border-r-0 text-on-surface px-3 py-3 focus:ring-0 focus:border-primary"/>
+                </div>
+                <div>
+                    <label class="block text-label-md font-label-md text-on-surface uppercase mb-2">Message</label>
+                    <textarea rows="3" placeholder="Briefly describe your concern..." class="w-full bg-surface-container-high border-b-2 border-primary border-t-0 border-l-0 border-r-0 text-on-surface px-3 py-3 focus:ring-0 focus:border-primary resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md uppercase hover:brightness-110 transition-all shadow-lg mt-2">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline-variant/20 py-12 mt-8">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">dermatology</span>
+            </div>
+            <div>
+                <div class="text-headline-sm font-headline-sm text-on-surface tracking-widest text-sm">Dr. Sonam Mehra</div>
+                <div class="text-[11px] text-on-surface-variant tracking-wider uppercase">Skin, Hair & Laser Clinic, Ajmer</div>
+            </div>
+        </div>
+        <div class="text-body-md text-on-surface-variant text-center md:text-right">
+            <p>MBBS, MD, DNB (Lady Hardinge Medical College, New Delhi)</p>
+            <p class="mt-1">Shastri Nagar, Ajmer, Rajasthan</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Bottom CTA -->
+<div class="mobile-bottom-cta md:hidden fixed bottom-0 w-full z-50 bg-primary shadow-lg flex justify-center items-center">
+    <a class="flex items-center justify-center gap-2 py-4 w-full text-on-primary font-bold text-label-md font-label-md uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 duration-200" href="tel:+916375899878">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+        Call: 6375899878
+    </a>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    // ===== SCROLL REVEAL =====
+    var revealElements = document.querySelectorAll('.scroll-reveal');
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(function(el) { revealObserver.observe(el); });
+
+    document.querySelectorAll('#home .scroll-reveal').forEach(function(el) {
+        setTimeout(function() { el.classList.add('visible'); }, 300);
+    });
+
+    // ===== NAVBAR SCROLL =====
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 80) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    }, { passive: true });
+
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            var target = document.querySelector(href);
+            if (target) {
+                var offset = 80;
+                var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+
+    // ===== LIGHT HERO PARALLAX =====
+    var heroContainer = document.querySelector('.hero-container');
+    var heroBg = document.querySelector('.hero-bg');
+    if (heroContainer && heroBg) {
+        window.addEventListener('scroll', function() {
+            var rect = heroContainer.getBoundingClientRect();
+            var windowHeight = window.innerHeight;
+            var progress = Math.max(0, Math.min(1, -rect.top / (rect.height - windowHeight)));
+            var scale = 1.0 + (progress * 0.12);
+            heroBg.style.transform = 'scale(' + scale + ')';
+        }, { passive: true });
+    }
+
+})();
+</script>
+
+</body>
+</html>
